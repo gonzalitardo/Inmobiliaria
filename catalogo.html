@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="shortcut icon" href="/img/logo-01-blue (2).png" type="image/x-icon">
     <title>World Investment Realty</title>
 </head>
@@ -20,9 +20,9 @@
             
             <ul class="nav__menu">
                 <li><a href="/index.html" class="nav__item">INICIO</a></li>
-                <li><a href="" class="nav__item">COMPRAR</a></li>
-                <li><a href="" class="nav__item">ALQUILAR</a></li>
-                <li><a href="" class="nav__item">NOSOTROS</a></li>
+                <li><a href="/catalogo.html" class="nav__item">COMPRAR</a></li>
+                <li><a href="/catalogo.html" class="nav__item">ALQUILAR</a></li>
+                <li><a href="/html/nosotros.html" class="nav__item">NOSOTROS</a></li>
                 <div class="redes-nav">
                     <a href=""><img src="/assets/instagram (1).svg" alt="red-social"></a>
                     <a href=""><img src="/assets/facebook.svg" alt="red-social"></a>
@@ -83,124 +83,46 @@
         </section>
         <section class="propiedades">
             <div class="lista-propiedades">
+                    
                 <div class="item-propiedad">
+                <?php
+                include("conexion.php");
+                    $query = "SELECT * FROM propiedades";
+                    $resultado = $conexion->query($query);
+                    while ($row = $resultado->fetch_assoc()) {
+                    ?>
                     <div class="item-top">
-                        <img src="/img/propiedad1.jpg" alt="Propiedad">
+                        <img src="data:imagen/jpg;base64, <?php echo base64_encode($row['imagen']); ?>" alt="Propiedad">
                         <div class="description">
-                            <h2>Villa de lujo con 4 habitaciones en San Francisco</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, ab, fugit, impedit modi ullam.</p>
+                            <h2><?php echo $row['nombre']; ?></h2>
+                            <p><?php echo $row['descripcion']; ?></p>
                         </div>
                     </div>
                     <div class="item-bottom">
                         <div class="item-date">
                             <img src="/assets/regla-horizontal.svg" alt="icon">
-                            <p>300 m</p>
+                            <p><?php echo $row['metros'];?></p>
                         </div>
                         <div class="item-date">
                             <img src="/assets/cama.svg" alt="icon">
-                            <p>5</p>
+                            <p><?php echo $row['dormitorios'];?></p>
                         </div>
                         <div class="item-date">
                             <img src="/assets/bano.svg" alt="icon">
-                            <p>3</p>
+                            <p><?php echo $row['baños'];?></p>
                         </div>
                         <div class="item-date">
-                            <h3>$990.000</h3>
+                            <h3><?php echo $row['precio'];?></h3>
                         </div>
                         <div class="item-date">
                             <a href="">DETALLES</a>
                         </div>
                     </div>
-                </div>
-                <div class="item-propiedad">
-                    <div class="item-top">
-                        <img src="/img/propiedad1.jpg" alt="Propiedad">
-                        <div class="description">
-                            <h2>Villa de lujo con 4 habitaciones en San Francisco</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, ab, fugit, impedit modi ullam.</p>
-                        </div>
-                    </div>
-                    <div class="item-bottom">
-                        <div class="item-date">
-                            <img src="/assets/regla-horizontal.svg" alt="icon">
-                            <p>300 m</p>
-                        </div>
-                        <div class="item-date">
-                            <img src="/assets/cama.svg" alt="icon">
-                            <p>5</p>
-                        </div>
-                        <div class="item-date">
-                            <img src="/assets/bano.svg" alt="icon">
-                            <p>3</p>
-                        </div>
-                        <div class="item-date">
-                            <h3>$990.000</h3>
-                        </div>
-                        <div class="item-date">
-                            <a href="">DETALLES</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item-propiedad">
-                    <div class="item-top">
-                        <img src="/img/propiedad1.jpg" alt="Propiedad">
-                        <div class="description">
-                            <h2>Villa de lujo con 4 habitaciones en San Francisco</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, ab, fugit, impedit modi ullam.</p>
-                        </div>
-                    </div>
-                    <div class="item-bottom">
-                        <div class="item-date">
-                            <img src="/assets/regla-horizontal.svg" alt="icon">
-                            <p>300 m</p>
-                        </div>
-                        <div class="item-date">
-                            <img src="/assets/cama.svg" alt="icon">
-                            <p>5</p>
-                        </div>
-                        <div class="item-date">
-                            <img src="/assets/bano.svg" alt="icon">
-                            <p>3</p>
-                        </div>
-                        <div class="item-date">
-                            <h3>$990.000</h3>
-                        </div>
-                        <div class="item-date">
-                            <a href="">DETALLES</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item-propiedad">
-                    <div class="item-top">
-                        <img src="/img/propiedad1.jpg" alt="Propiedad">
-                        <div class="description">
-                            <h2>Villa de lujo con 4 habitaciones en San Francisco</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, ab, fugit, impedit modi ullam.</p>
-                        </div>
-                    </div>
-                    <div class="item-bottom">
-                        <div class="item-date">
-                            <img src="/assets/regla-horizontal.svg" alt="icon">
-                            <p>300 m</p>
-                        </div>
-                        <div class="item-date">
-                            <img src="/assets/cama.svg" alt="icon">
-                            <p>5</p>
-                        </div>
-                        <div class="item-date">
-                            <img src="/assets/bano.svg" alt="icon">
-                            <p>3</p>
-                        </div>
-                        <div class="item-date">
-                            <h3>$990.000</h3>
-                        </div>
-                        <div class="item-date">
-                            <a href="">DETALLES</a>
-                        </div>
-                    </div>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
-
             <div class="lista-zonas">
                 <h2>OTRAS<br>RECOMENDACIONES</h2>
                 <div class="item-zona">

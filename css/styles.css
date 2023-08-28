@@ -177,7 +177,9 @@ nav ul li a:hover{
         transform: translateY(0);
     }
 }
-/*SECCIÓN PROPIEDADES (CATALOGO.HTML)*/
+
+
+/*SECCIÓN PROPIEDADES (CATALOGO.PHP)*/
 .compra-alquiler{
     width: 80%;
     height: auto;
@@ -314,7 +316,6 @@ nav ul li a:hover{
 .lista-zonas{
     width: 25%;
     height: 700px;
-    overflow-y: scroll;
     padding: 20px;
 }
 .lista-zonas h2{
@@ -363,9 +364,68 @@ nav ul li a:hover{
     margin-bottom: 8px;
     margin-left: 8px;
 }
+/*SECCIÓN PROPIEDADES (CATALOGO.PHP)*/
 
 
-/*SECCIÓN PROPIEDADES (CATALOGO.HTML)*/
+/*SECCIÓN DE NOSOTROS (NOSOTROS.HTML)*/
+.innovacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin: 45px 0px;
+}
+.innovacion .info-innovacion{
+    width: 60%;
+}
+.innovacion .info-innovacion h1{
+    font-size: 45px;
+    line-height: 40px;
+    color: var(--color1);
+}
+.innovacion .info-innovacion p{
+    font-size: 17px;
+    color: var(--color1);
+    margin-top: 15px;
+}
+.datos-wir{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+    background-color: var(--color3);
+    gap: 80px;
+}
+.datos-wir .datos-linea{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.datos-wir .datos-linea .item-datos{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.datos-wir .datos-linea .item-datos h3{
+    color: var(--color1);
+    font-weight: 800;
+    font-size: 17px;
+}
+.datos-wir .datos-linea .item-datos h1{
+    color: var(--color1);
+    font-weight: 900;
+    font-size: 40px;
+}
+/*SECCIÓN DE NOSOTROS (NOSOTROS.HTML)*/
+
+
 .ocultar{
     opacity: 0;
 }
